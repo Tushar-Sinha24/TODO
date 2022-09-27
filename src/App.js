@@ -13,7 +13,7 @@ function App() {
   
 
   useEffect(()=>{
-    axios.get("http://localhost:5000/api/v1/todo")
+    axios.get("https://todo-list-pr.herokuapp.com/api/v1/todo")
     .then((res)=>{setTodo(Object.values(res.data.todo))})
     .catch((err)=>{console.log(err);})
   })
@@ -21,7 +21,7 @@ function App() {
 
   const addUpdate=()=>{
 
-      axios.post("http://localhost:5000/api/v1/todo",{text})
+      axios.post("https://todo-list-pr.herokuapp.com/api/v1/todo",{text})
       .then((res)=>{
         console.log(res.data);
         setText("")
@@ -30,7 +30,7 @@ function App() {
   }
 
   const deleteTodo=(_id)=>{
-    axios.delete("http://localhost:5000/api/v1/todo/"+_id)
+    axios.delete("https://todo-list-pr.herokuapp.com/api/v1/todo/"+_id)
       .then((res)=>{
         console.log(res.data);
         setText("")
